@@ -1,5 +1,7 @@
+import pcapy
 import getpass
 import threading
+import threads
 from collections import defaultdict
 import time
 import logging
@@ -11,7 +13,7 @@ import os
 from amazon_dash.config import Config
 from amazon_dash.exceptions import SecurityException
 from amazon_dash.scan import scan
-
+import amazon_dash.commands as commands
 
 DEFAULT_DELAY = 10
 EXECUTE_SHELL_PARAM = '-c'
@@ -64,8 +66,12 @@ class Device(object):
         cmd = self.cmd
         if self.user == ROOT_USER and not root_allowed:
             raise SecurityException('For security, execution as root is not allowed.')
-        cmd = run_as_cmd(cmd, self.user)
-        execute(cmd, self.cwd)
+        try:
+            func_cmd = getattr(commands, cmd)
+            thread.start_new_thread(func_cmd, ())
+        except AttributeError:
+            cmd = run_as_cmd(cmd, self.user)
+            execute(cmd, self.cwd)
 
 
 class Listener(object):

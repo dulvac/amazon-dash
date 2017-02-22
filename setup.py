@@ -15,13 +15,13 @@ import uuid
 ###############################
 
 # Información del autor
-AUTHOR = 'Nekmo'
-EMAIL = 'contacto@nekmo.com'
+AUTHOR = 'dulvac'
+EMAIL = ''
 
 # Información del paquete
-PACKAGE_NAME = 'amazon-dash'
-PACKAGE_DOWNLOAD_URL = 'https://github.com/Nekmo/amazon-dash/archive/master.zip'  # .tar.gz
-URL = 'https://github.com/Nekmo/amazon-dash'
+PACKAGE_NAME = 'amazon-dash-dulvac'
+PACKAGE_DOWNLOAD_URL = ''  # .tar.gz
+URL = 'https://github.com/dulvac/amazon-dash'
 STATUS_LEVEL = 3  # 1:Planning 2:Pre-Alpha 3:Alpha 4:Beta 5:Production/Stable 6:Mature 7:Inactive
 KEYWORDS = ['amazon', 'dash', 'hack']  # Palabras clave
 # https://github.com/github/choosealicense.com/tree/gh-pages/_licenses
