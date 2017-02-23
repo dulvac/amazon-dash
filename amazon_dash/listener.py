@@ -1,7 +1,7 @@
 import pcapy
 import getpass
 import threading
-import threads
+import thread
 from collections import defaultdict
 import time
 import logging
